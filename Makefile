@@ -4,7 +4,7 @@ PYTHON := python3
 VENV_DIR := venv
 ACTIVATE := source activate $(VENV_DIR)/bin/activate
 
-.PHONY := install venv target activate clean freeze
+.PHONY := install venv target activate clean freeze template
 
 venv:
 	$(PYTHON) -m venv $(VENV_DIR)
@@ -20,3 +20,6 @@ freeze:
 
 clean:
 	rm -rf $(VENV_DIR)
+
+template:
+	$(PYTHON) template.py
